@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 
     AudioSource basic_swing;
 
-    public string weapon = "sword";
+    public string weapon = "fists";
 
 
     //string[] myArray = new string[5];
