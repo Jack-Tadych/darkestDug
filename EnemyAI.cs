@@ -105,16 +105,23 @@ public class EnemyAI : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             AttackV2();
+            isTouchingPlayer = true;
             print("Enemy is touching player" + isAttacking);
         }
     }
-
+    private void OnTriggerExit(Collider other) {
+        if (other.CompareTag("Player")) {
+            isTouchingPlayer = false;
+        }
+    }
     public void Update() {
-        if (isAttacking != null)
+        if (isAttacking != null && isTouchingPlayer == False) 
         {
             agent.destination = player.transform.position;
             anim.SetTrigger("Move");
-        } 
+        }else if(isTouchingPlayer == True){
+            anim.SetTrigger("Idle");
+        }
 
         //velocity = transform.position;
     }
