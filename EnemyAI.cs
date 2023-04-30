@@ -112,6 +112,7 @@ public class EnemyAI : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("Player")) {
             isTouchingPlayer = false;
+            print("Enemy is not touching player" + isAttacking);
         }
     }
     public void Update() {
