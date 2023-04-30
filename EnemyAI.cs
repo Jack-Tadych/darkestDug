@@ -114,7 +114,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
     public void Update() {
-        print(isTouchingPlayer);
+        //print(isTouchingPlayer);
 
         if(isAttacking != null && isTouchingPlayer){
             anim.SetTrigger("Idle");
