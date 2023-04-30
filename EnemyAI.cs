@@ -22,6 +22,11 @@ public class EnemyAI : MonoBehaviour
 
     void AttackV2()
     {
+        anim.SetTrigger("Attack");
+        Invoke("hittingThePlayer", Delay);   
+    }
+    private void hittingThePlayer()
+    {
         // Attack
         if (!isAttacking && Time.time - lastAttackTime > attackCooldown)
         {
@@ -59,6 +64,7 @@ public class EnemyAI : MonoBehaviour
 
 
     }
+
     private void Start()
     {
         anim = gameObject.GetComponent<Animator>();
@@ -98,8 +104,8 @@ public class EnemyAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            anim.SetTrigger("Attack");
-            Invoke("AttackV2", Delay);  
+            AttackV2();
+            print("Enemy is touching player" + isAttacking);
         }
     }
 
