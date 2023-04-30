@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         basic_swing = GetComponent<AudioSource>();
-        
+        weapon = "fists";
     }
 
     public void Heal(int healAmount)
@@ -79,11 +79,7 @@ public class PlayerController : MonoBehaviour
         drop();
     }
 
-    void click() {
-        if (Input.GetMouseButtonDown(0))
-        {
-            print(weapon);
-        }
+
         
         
     }
