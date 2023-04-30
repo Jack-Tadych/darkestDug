@@ -4,7 +4,10 @@
 - True crime for frogs
 - The ring Is pretty
 
-
+## TODO 
+1. UI
+2. Sceen change
+3. wepon selection 
 
 
 
