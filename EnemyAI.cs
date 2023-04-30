@@ -116,9 +116,9 @@ public class EnemyAI : MonoBehaviour
     public void Update() {
         //print(isTouchingPlayer);
 
-        if(isAttacking != null && isTouchingPlayer){
-            anim.SetTrigger("Idle");
-        }
+        // if(isAttacking != null && isTouchingPlayer){
+        //     anim.SetTrigger("Idle");
+        // }
         else if (isAttacking != null && !isTouchingPlayer) 
         {
             agent.destination = player.transform.position;
