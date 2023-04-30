@@ -114,12 +114,14 @@ public class EnemyAI : MonoBehaviour
         }
     }
     public void Update() {
-        //print(isTouchingPlayer);
+        print(isTouchingPlayer);
 
         // if(isAttacking != null && isTouchingPlayer){
         //     anim.SetTrigger("Idle");
         // }
-         if (isAttacking != null && !isTouchingPlayer) 
+
+        
+        else if (isAttacking != null && isTouchingPlayer) 
         {
             agent.destination = player.transform.position;
             anim.SetTrigger("Move");

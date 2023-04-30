@@ -7,8 +7,7 @@ public class PlayerController : MonoBehaviour
     AudioSource basic_swing;
 
     public string weapon = "sword";
-    public Image weaponImageUI; // reference to the image element for the weapon
-    public Sprite weaponImage; // reference to the sprite of the weapon
+
 
     //string[] myArray = new string[5];
 
@@ -34,10 +33,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         basic_swing = GetComponent<AudioSource>();
-        if (weaponImageUI != null)
-        {
-            weaponImageUI.sprite = weaponImage;
-        }
     }
 
     public void Heal(int healAmount)
