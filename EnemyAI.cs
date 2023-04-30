@@ -3,7 +3,7 @@ using UnityEngine.AI;
 using System.Collections;
 
 
-public class EnemyAI2 : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
     Animator anim;
     private GameObject player = null;
