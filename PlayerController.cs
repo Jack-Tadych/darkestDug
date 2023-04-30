@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         basic_swing = GetComponent<AudioSource>();
+        
     }
 
     public void Heal(int healAmount)
