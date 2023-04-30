@@ -28,7 +28,8 @@ public class Dagger : MonoBehaviour
             player.health = health;
 
             // Destroy the battle axe object
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
+
         }
     }
 }

@@ -28,7 +28,8 @@ public class Sword : MonoBehaviour
 
 
             // Destroy the battle axe object
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
+
         }
     }
 }
