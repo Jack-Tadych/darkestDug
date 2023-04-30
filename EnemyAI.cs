@@ -121,7 +121,7 @@ public class EnemyAI : MonoBehaviour
         // }
 
 
-        if (isAttacking != null && isTouchingPlayer) 
+        if (isAttacking != null && !isTouchingPlayer) 
             {
                 agent.destination = player.transform.position;
                 anim.SetTrigger("Move");
