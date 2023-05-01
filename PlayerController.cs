@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     
     
 
-    public GameObject glowstick = null;
+    //public GameObject glowstick = null;
     
    
 
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
         AttackV2();
         click();
-        drop();
+        //drop();
     }
 
     void click() {
@@ -98,13 +98,13 @@ public class PlayerController : MonoBehaviour
         
         
     }
-    void drop()
-    {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            Instantiate(glowstick, transform.position, transform.rotation);
-        }
-    }
+    // void drop()
+    // {
+    //     if(Input.GetKeyDown(KeyCode.Q))
+    //     {
+    //         Instantiate(glowstick, transform.position, transform.rotation);
+    //     }
+    // }
     // Attack cooldown
     void AttackV2()
     {
