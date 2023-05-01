@@ -26,7 +26,7 @@ public class WeaponUI : MonoBehaviour
         {
             case "sword":
                 weaponImage.sprite = swordSprite;
-                player.
+                
                 break;
             case "dagger":
                 weaponImage.sprite = Dagger;
