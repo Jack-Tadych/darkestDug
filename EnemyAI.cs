@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     //attack/
     public float attackRange = 2f;
     public int attackDamage = 50;
-    public float attackCooldown = 5f;
+    public float attackCooldown = 0f;
     private bool isAttacking = false;
     private float lastAttackTime = 0f;
     public float Delay = 2f;
@@ -44,6 +44,12 @@ public class EnemyAI : MonoBehaviour
 
     private void hittingThePlayer()
     {
+        // Attack
+        if (!isAttacking && Time.time - lastAttackTime > attackCooldown)
+        {
+            // Play attack animation
+
+            // Set isAttacking flag to true and save the time of the attack
             isAttacking = true;
             lastAttackTime = Time.time;
 
@@ -63,7 +69,7 @@ public class EnemyAI : MonoBehaviour
                     Player.TakeDamage(attackDamage);
                 }
             }
-        
+        }
 
 
         // Reset isAttacking flag after attackCooldown time
