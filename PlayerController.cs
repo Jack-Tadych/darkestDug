@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource basic_swing;
 
     public string weapon = "fists";
+    public string died;
 
 
     //string[] myArray = new string[5];
@@ -62,7 +66,7 @@ public class PlayerController : MonoBehaviour
         {
             // Die
             print("You died!");
-            Destroy(gameObject);
+            SceneManager.LoadScene(died);
         }
 
     }
