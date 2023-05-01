@@ -24,14 +24,18 @@ public class WeaponUI : MonoBehaviour
         // Update the weapon image based on the current weapon
         switch (playerController.weapon)
         {
+            
             case "sword":
                 weaponImage.sprite = swordSprite;
+                weaponImage.gameObject.SetActive(true);                
                 break;
             case "dagger":
                 weaponImage.sprite = Dagger;
+                weaponImage.gameObject.SetActive(true);
                 break;
             case "BattleAxe":
                 weaponImage.sprite = BattleAxe;
+                weaponImage.gameObject.SetActive(true);
                 break;
             default:
                 weaponImage.sprite = null;
