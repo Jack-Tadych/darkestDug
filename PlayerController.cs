@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public int attackDamage = 50;
 
     public int maxHeath = 100;
-
+    public int currentHealth = 1;
     private bool isAttacking = false;
     private float lastAttackTime = 0f;
     
