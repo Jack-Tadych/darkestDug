@@ -6,8 +6,8 @@ public class WeaponUI : MonoBehaviour
     public Text weaponText;
     public Image weaponImage;
     public Sprite swordSprite;
-    public Sprite bowSprite;
-    public Sprite wandSprite;
+    public Sprite Dagger;
+    public Sprite BattleAxe;
     public PlayerController playerController;
 
     private void Update()
@@ -21,10 +21,10 @@ public class WeaponUI : MonoBehaviour
                 weaponImage.sprite = swordSprite;
                 break;
             case "bow":
-                weaponImage.sprite = bowSprite;
+                weaponImage.sprite = Dagger;
                 break;
             case "wand":
-                weaponImage.sprite = wandSprite;
+                weaponImage.sprite = BattleAxe;
                 break;
             default:
                 weaponImage.sprite = null;
