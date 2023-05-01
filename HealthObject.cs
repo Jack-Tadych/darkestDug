@@ -5,14 +5,19 @@ public class HealthObject : MonoBehaviour
     public int healAmount = 100;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            
-            // Get the PlayerController component from the player
-
-            PlayerController playerController = other.GetComponent<PlayerController>();
+        PlayerController playerController = other.GetComponent<PlayerController>();
             playerController.Heal(healAmount);
-            Destroy(gameObject);
-        }
+
+            canBePickedUp = false;
+            StartCoroutine(StartPickupDelay());
     }
+    
+
+    private IEnumerator StartPickupDelay()
+    {
+        yield return new WaitForSeconds(pickupDelay);
+        canBePickedUp = true;
+        Destroy(gameObject);
+    }
+
 }
