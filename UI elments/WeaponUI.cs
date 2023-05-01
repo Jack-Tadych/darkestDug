@@ -9,7 +9,6 @@ public class WeaponUI : MonoBehaviour
     public Sprite Dagger;
     public Sprite BattleAxe;
 
-    public Text healthText;
     // public AudioSource swing;
     // public AudioSource stab;
     // public AudioSource hardSwing;
@@ -18,7 +17,7 @@ public class WeaponUI : MonoBehaviour
 
     private void Update()
     {
-        print(playerController.maxHeath + " " + playerController.currentHealth);
+        Text = playerController.maxHeath + " " + playerController.currentHealth);
         
         // Update the weapon image based on the current weapon
         switch (playerController.weapon)
