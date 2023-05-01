@@ -28,11 +28,14 @@ public class EnemyAI : MonoBehaviour
     {
         anim.SetTrigger("Attack");
         Invoke("hittingThePlayer", Delay);
-        anim.SetTrigger("Back");
-        print("it worked");
+        anim.SetTrigger("Idle");
+        Invoke("runaway", runAwayTime);
         // isRunningAway = true;
         // Invoke("StopRunning", runAwayTime);
 
+    }
+    void runaway(){
+        anim.SetTrigger("Back");
     }
      private void StopRunning()
     {
