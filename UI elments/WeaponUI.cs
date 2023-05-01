@@ -17,7 +17,7 @@ public class WeaponUI : MonoBehaviour
 
     private void Update()
     {
-        Text = playerController.maxHeath + " " + playerController.currentHealth);
+        Text = playerController.maxHeath + " " + playerController.currentHealth;
         
         // Update the weapon image based on the current weapon
         switch (playerController.weapon)
