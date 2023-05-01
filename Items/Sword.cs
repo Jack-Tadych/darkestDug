@@ -4,11 +4,11 @@ public class Sword : MonoBehaviour
 {
 
     public string weapon = "sword";
-    public float newAttackRange = 5f;
-    public int newAttackDamage = 50;
-    public float newAttackCooldown = 2f;
-    public float moveSpeed = 5f;
-    public int health = 200;
+    public float newAttackRange = 2.5f;
+    public int newAttackDamage = 3;
+    public float newAttackCooldown = 1.25f;
+    public float moveSpeed =  1.75f;
+    public int health =  2;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,13 +19,12 @@ public class Sword : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
 
             // Change the values of the variables in the PlayerController script
-            player.attackRange = newAttackRange;
-            player.attackDamage = newAttackDamage;
-            player.attackCooldown = newAttackCooldown;
-            player.moveSpeed = moveSpeed;
+            player.attackRange *= newAttackRange;
+            player.attackDamage *= newAttackDamage;
+            player.attackCooldown *= newAttackCooldown;
+            player.moveSpeed *= moveSpeed;
             player.weapon = weapon;
-            player.maxHeath = health;
-
+            player.maxHealth *= health;
 
             // Destroy the battle axe object
             Destroy(transform.parent.gameObject);
