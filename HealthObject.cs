@@ -3,22 +3,31 @@ using UnityEngine;
 public class HealthObject : MonoBehaviour
 {
     public int healAmount = 100;
-    public float pickupDelay = 1.0f; // 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerController playerController = other.GetComponent<PlayerController>();
-            playerController.Heal(healAmount);
+        private bool hasGivenHealth = false;
+        public float Delay = 2f;
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player") && !hasGivenHealth)
+            {
+                // Get the PlayerController component from the player
+                PlayerController playerController = other.GetComponent<PlayerController>();
 
-            canBePickedUp = false;
-            StartCoroutine(StartPickupDelay());
+                // Heal the player and set hasGivenHealth to true
+                playerController.Heal(healAmount);
+                hasGivenHealth = true;
+
+                // Wait for 5 seconds before destroying the object
+                Invoke("DestroyAfterDelay", Delay);   
+            
+            }
+        }
+
+        private void DestroyAfterDelay()
+        {
+            yield return new WaitForSeconds(5f);
+            Destroy(gameObject);
+        }
     }
-    
-
-    private IEnumerator StartPickupDelay()
-    {
-        yield return new WaitForSeconds(pickupDelay);
-        canBePickedUp = true;
-        Destroy(gameObject);
-    }
-
 }
