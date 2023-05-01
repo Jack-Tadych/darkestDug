@@ -34,31 +34,31 @@ public class PlayerController : MonoBehaviour
     {
         basic_swing = GetComponent<AudioSource>();
         weapon = "fists";
-        currentHeath = maxHeath;
+        currentHealth = maxHeath;
     }
 
     public void Heal(int healAmount)
     {
-        if(healAmount+currentHeath > maxHeath)
+        if(healAmount+currentHealth > maxHeath)
         {
-            currentHeath = maxHeath;
+            currentHealth = maxHeath;
         }else{
         healAmount = (int)(healAmount * healFactor);
-        currentHeath += healAmount;
+        currentHealth += healAmount;
         }
        
     
-        print("Healed! currentHeath is now " + currentHeath);
+        print("Healed! currentHealth is now " + currentHealth);
     }
 
 
 
     public void TakeDamage(int damage)
     {
-        currentHeath -= damage;
-        print("Ouch! currentHeath is now " + currentHeath);
+        currentHealth -= damage;
+        print("Ouch! currentHealth is now " + currentHealth);
        
-        if (currentHeath <= 0)
+        if (currentHealth <= 0)
         {
             // Die
             print("You died!");
@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
                 if (colliderTag == "Enemy")
                 {
                     // Apply damage to the enemy
-                    GenralcurrentHeath enemy = hitCollider.GetComponent<GenralcurrentHeath>();
+                    GenralcurrentHealth enemy = hitCollider.GetComponent<GenralcurrentHealth>();
                     enemy.TakeDamage(attackDamage);
                 }
                 
