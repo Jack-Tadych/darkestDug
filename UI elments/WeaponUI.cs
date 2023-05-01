@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class WeaponUI : MonoBehaviour
 {
-    //public Text weaponText;
+    public Text heath;
     public Image weaponImage;
     public Sprite swordSprite;
     public Sprite Dagger;
@@ -18,8 +18,7 @@ public class WeaponUI : MonoBehaviour
 
     private void Update()
     {
-        print("Health: " + playerController.currentHeath);
-        weaponText.text = "Weapon: " + playerController.weapon;
+        print(playerController.maxHeath + " " + playerController.currentHeath);
         
         // Update the weapon image based on the current weapon
         switch (playerController.weapon)
