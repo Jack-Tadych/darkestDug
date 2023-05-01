@@ -19,8 +19,7 @@ public class HealthObject : MonoBehaviour
                 playerController.Heal(healAmount);
                 hasGivenHealth = true;
 
-                // Wait for 5 seconds before destroying the object
-                Invoke("Destroy(gameObject);", Delay);   
+        
             
             }
         }
