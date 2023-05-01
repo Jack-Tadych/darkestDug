@@ -37,7 +37,6 @@ public class EnemyAI : MonoBehaviour
         isRunningAway = false;
     }
 
-    private vo
     private void hittingThePlayer()
     {
         // Attack
