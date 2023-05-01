@@ -24,7 +24,7 @@ public class Sword : MonoBehaviour
             player.attackCooldown = newAttackCooldown;
             player.moveSpeed = moveSpeed;
             player.weapon = weapon;
-            player.health = health;
+            player.maxHeath = health;
 
 
             // Destroy the battle axe object

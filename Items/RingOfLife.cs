@@ -16,7 +16,7 @@ public class RingOfLife : MonoBehaviour
 
             // Change the values of the variables in the PlayerController script
             player.healFactor *= modification;
-            player.health *= (int)modification;
+            player.maxHeath *= (int)modification;
 
             
             // Destroy the battle axe object

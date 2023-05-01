@@ -7,7 +7,6 @@ public class WeaponDisplay : MonoBehaviour {
 
     public Text weaponText;
     public PlayerController player;
-    
 
     private bool hovering = false;
 

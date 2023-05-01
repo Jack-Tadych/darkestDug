@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float healFactor = 1f;
     public int attackDamage = 50;
 
+    public int maxHeath = 100;
 
     private bool isAttacking = false;
     private float lastAttackTime = 0f;
@@ -33,14 +34,25 @@ public class PlayerController : MonoBehaviour
     {
         basic_swing = GetComponent<AudioSource>();
         weapon = "fists";
+        currentHeath = maxHeath;
     }
 
     public void Heal(int healAmount)
     {
+        if(healAmount+currentHeath > maxHeath)
+        {
+            currentHeath = maxHeath
+        }else{
         healAmount = (int)(healAmount * healFactor);
         currentHeath += healAmount;
-        //print("Healed! currentHeath is now " + currentHeath);
+        }
+       
+    
+        print("Healed! currentHeath is now " + currentHeath);
     }
+
+
+
     public void TakeDamage(int damage)
     {
         currentHeath -= damage;
