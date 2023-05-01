@@ -131,8 +131,7 @@ public class PlayerController : MonoBehaviour
                 if (colliderTag == "Enemy")
                 {
                     // Apply damage to the enemy
-                    GenralcurrentHeath enemy = hitCollider.GetComponent<GenralcurrentHeath>();
-                    enemy.TakeDamage(attackDamage);
+                    GenralHealth enemy = hitCollider.GetComponent<GenralHealth>();                    enemy.TakeDamage(attackDamage);
                 }
             }
         }
