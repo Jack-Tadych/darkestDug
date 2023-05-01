@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
     }
     void drop()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.G))
         {
             Instantiate(glowstick, transform.position, transform.rotation);
         }
