@@ -18,7 +18,6 @@ public class EnemyAI : MonoBehaviour
     private float lastAttackTime = 0f;
     public float Delay = 2f;
 
-    private bool isTouchingPlayer = false;
 
     void AttackV2()
     {
@@ -105,23 +104,20 @@ public class EnemyAI : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             AttackV2();
-            isTouchingPlayer = true;
         }
     }
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("Player")) {
-            isTouchingPlayer = false;
         }
     }
     public void Update() {
-        print(isTouchingPlayer);
 
         // if(isAttacking != null && isTouchingPlayer){
         //     anim.SetTrigger("Idle");
         // }
 
 
-        if (isAttacking != null && !isTouchingPlayer) 
+        if (isAttacking != null) 
             {
                 agent.destination = player.transform.position;
                 anim.SetTrigger("Move");
