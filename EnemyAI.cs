@@ -37,6 +37,7 @@ public class EnemyAI : MonoBehaviour
         isRunningAway = false;
     }
 
+    private vo
     private void hittingThePlayer()
     {
         // Attack
@@ -123,41 +124,27 @@ public class EnemyAI : MonoBehaviour
         if (other.CompareTag("Player")) {
         }
     }
-    public void Update() 
+    public void Update()
     {
-        // If attacking player
         if (isAttacking) 
         {
+            // if attacking, move towards player
             agent.destination = player.transform.position;
             anim.SetTrigger("Move");
 
-            // If running away after attacking
-            if (isRunningAway)
-            {
-                // Calculate the direction away from player
-                Vector3 directionAwayFromPlayer = transform.position - player.transform.position;
-                directionAwayFromPlayer.Normalize();
+            if (!isRunningAway && Time.time - lastAttackTime >= Delay) {
+                // start running away after delay
+                isRunningAway = true;
+                agent.speed *= runAwaySpeedMultiplier;
+            }
 
-                // Set the agent's destination to a point away from the player
-                agent.SetDestination(transform.position + directionAwayFromPlayer * 10f);
-
-                // Increase agent's speed temporarily
-                agent.speed = agent.speed * runAwaySpeedMultiplier;
+            if (isRunningAway && Time.time - lastAttackTime >= runAwayTime) {
+                // stop running away after runAwayTime
+                isAttacking = false;
+                isRunningAway = false;
+                agent.speed /= runAwaySpeedMultiplier;
             }
         }
-
-        // If not attacking or running away, set agent's destination to player's position
-        if (!isAttacking && !isRunningAway)
-        {
-            agent.destination = player.transform.position;
-            anim.SetTrigger("Move");
-        }
-
-        // Reset agent's speed to default after running away
-        if (!isRunningAway)
-        {
-            agent.speed = agent.speed / runAwaySpeedMultiplier;
-        }
     }
-}
 
+}
