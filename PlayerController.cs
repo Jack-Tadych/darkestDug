@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     
     
 
-    //public GameObject glowstick = null;
+    public GameObject glowstick = null;
     
    
 
