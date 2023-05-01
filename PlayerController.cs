@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         if(healAmount+currentHeath > maxHeath)
         {
-            currentHeath = maxHeath
+            currentHeath = maxHeath;
         }else{
         healAmount = (int)(healAmount * healFactor);
         currentHeath += healAmount;
