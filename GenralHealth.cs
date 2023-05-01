@@ -17,8 +17,8 @@ public class GenralHealth : MonoBehaviour
         print(currentHealth);
         if (currentHealth <= 0)
         {
-            
-            Instantiate(prefabToSpawn, transform.position, transform.rotation);
+            Vector3 newPosition = new Vector3(transform.position.x, transform.position.y, transform.position.y * 2);
+            Instantiate(prefabToSpawn, newPosition, transform.rotation);
             Die();
         }
     }
