@@ -12,7 +12,7 @@ public class HealthObject : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
 
             // Change the values of the variables in the PlayerController script
-            player.health += healthAmount;
+            player.heal(healthAmount);
             print("Healed! Health is now " + player.health);
             // Destroy the battle axe object
             Destroy(gameObject);
