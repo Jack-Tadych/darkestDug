@@ -1,11 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class WeaponDisplay : MonoBehaviour {
 
     public Text weaponText;
     public PlayerController player;
+    
 
     private bool hovering = false;
 

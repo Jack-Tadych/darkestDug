@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
-    AudioSource basic_swing;
+    public AudioSource basic_swing;
 
     public string weapon = "fists";
 
@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     public float attackCooldown = 2f;
     public float healFactor = 1f;
     public int attackDamage = 50;
-    public int health = 100;
 
 
     private bool isAttacking = false;
@@ -39,15 +38,15 @@ public class PlayerController : MonoBehaviour
     public void Heal(int healAmount)
     {
         healAmount = (int)(healAmount * healFactor);
-        health += healAmount;
-        print("Healed! Health is now " + health);
+        currentHeath += healAmount;
+        //print("Healed! currentHeath is now " + currentHeath);
     }
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        print("Ouch! Health is now " + health);
+        currentHeath -= damage;
+        print("Ouch! currentHeath is now " + currentHeath);
        
-        if (health <= 0)
+        if (currentHeath <= 0)
         {
             // Die
             print("You died!");
@@ -120,7 +119,7 @@ public class PlayerController : MonoBehaviour
                 if (colliderTag == "Enemy")
                 {
                     // Apply damage to the enemy
-                    GenralHealth enemy = hitCollider.GetComponent<GenralHealth>();
+                    GenralcurrentHeath enemy = hitCollider.GetComponent<GenralcurrentHeath>();
                     enemy.TakeDamage(attackDamage);
                 }
             }
@@ -155,7 +154,7 @@ public class PlayerController : MonoBehaviour
                 if (colliderTag == "Enemy")
                 {
                     // Apply damage to the enemy
-                    GenralHealth enemy = hitCollider.GetComponent<GenralHealth>();
+                    GenralcurrentHeath enemy = hitCollider.GetComponent<GenralcurrentHeath>();
                     enemy.TakeDamage(attackDamage);
                 }
                 

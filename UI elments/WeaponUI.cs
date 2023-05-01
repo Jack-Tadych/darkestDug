@@ -3,15 +3,22 @@ using UnityEngine.UI;
 
 public class WeaponUI : MonoBehaviour
 {
-    public Text weaponText;
+    //public Text weaponText;
     public Image weaponImage;
     public Sprite swordSprite;
     public Sprite Dagger;
     public Sprite BattleAxe;
+
+    public Text healthText;
+    // public AudioSource swing;
+    // public AudioSource stab;
+    // public AudioSource hardSwing;
+
     public PlayerController playerController;
 
     private void Update()
     {
+        print("Health: " + playerController.currentHeath);
         weaponText.text = "Weapon: " + playerController.weapon;
         
         // Update the weapon image based on the current weapon
@@ -19,6 +26,7 @@ public class WeaponUI : MonoBehaviour
         {
             case "sword":
                 weaponImage.sprite = swordSprite;
+                player.
                 break;
             case "dagger":
                 weaponImage.sprite = Dagger;
