@@ -44,12 +44,6 @@ public class EnemyAI : MonoBehaviour
 
     private void hittingThePlayer()
     {
-        // Attack
-        if (!isAttacking && Time.time - lastAttackTime > attackCooldown)
-        {
-            // Play attack animation
-
-            // Set isAttacking flag to true and save the time of the attack
             isAttacking = true;
             lastAttackTime = Time.time;
 
@@ -69,7 +63,7 @@ public class EnemyAI : MonoBehaviour
                     Player.TakeDamage(attackDamage);
                 }
             }
-        }
+        
 
 
         // Reset isAttacking flag after attackCooldown time
