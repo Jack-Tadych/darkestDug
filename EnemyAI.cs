@@ -28,8 +28,10 @@ public class EnemyAI : MonoBehaviour
     {
         anim.SetTrigger("Attack");
         Invoke("hittingThePlayer", Delay);
-        isRunningAway = true;
-        Invoke("StopRunning", runAwayTime);
+        anim.SetTrigger("Back")
+        
+        // isRunningAway = true;
+        // Invoke("StopRunning", runAwayTime);
 
     }
      private void StopRunning()
@@ -124,16 +126,14 @@ public class EnemyAI : MonoBehaviour
         }
     }
     public void Update() {
-        print("isAttacking: " + isAttacking + ", isRunningAway: " + isRunningAway)
-        if (isRunningAway)
+
+        // if(isAttacking != null && isTouchingPlayer){
+        //     anim.SetTrigger("Idle");
+        // }
+
+
+        if (isAttacking != null) 
             {
-                Vector3 awayFromPlayer = transform.position - player.transform.position;
-                agent.destination = transform.position + awayFromPlayer.normalized * runAwaySpeedMultiplier;
-                anim.SetTrigger("Move");
-            }
-            else if (isAttacking) 
-            {
-                // Attack player
                 agent.destination = player.transform.position;
                 anim.SetTrigger("Move");
             }
