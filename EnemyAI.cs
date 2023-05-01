@@ -124,6 +124,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
     public void Update() {
+        print("isAttacking: " + isAttacking + ", isRunningAway: " + isRunningAway)
         if (isRunningAway)
             {
                 Vector3 awayFromPlayer = transform.position - player.transform.position;
