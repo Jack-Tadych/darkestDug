@@ -109,7 +109,6 @@ public class PlayerController : MonoBehaviour
             Instantiate(glowstick, transform.position, transform.rotation);
         }
     }
-    Attack cooldown
     void AttackV2()
     {
         // Attack
