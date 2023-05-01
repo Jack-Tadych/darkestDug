@@ -123,27 +123,20 @@ public class EnemyAI : MonoBehaviour
         if (other.CompareTag("Player")) {
         }
     }
-    public void Update()
-    {
-        if (isAttacking) 
-        {
-            // if attacking, move towards player
-            agent.destination = player.transform.position;
-            anim.SetTrigger("Move");
-
-            if (!isRunningAway && Time.time - lastAttackTime >= Delay) {
-                // start running away after delay
-                isRunningAway = true;
-                agent.speed *= runAwaySpeedMultiplier;
+    public void Update() {
+        if (isRunningAway)
+            {
+                Vector3 awayFromPlayer = transform.position - player.transform.position;
+                agent.destination = transform.position + awayFromPlayer.normalized * runAwaySpeedMultiplier;
+                anim.SetTrigger("Move");
+            }
+            else if (isAttacking) 
+            {
+                // Attack player
+                agent.destination = player.transform.position;
+                anim.SetTrigger("Move");
             }
 
-            if (isRunningAway && Time.time - lastAttackTime >= runAwayTime) {
-                // stop running away after runAwayTime
-                isAttacking = false;
-                isRunningAway = false;
-                agent.speed /= runAwaySpeedMultiplier;
-            }
-        }
+        //velocity = transform.position;
     }
-
 }
