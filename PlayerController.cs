@@ -79,7 +79,11 @@ public class PlayerController : MonoBehaviour
         drop();
     }
 
-
+    void click() {
+        if (Input.GetMouseButtonDown(0))
+        {
+            print(weapon);
+        }
         
         
     }
