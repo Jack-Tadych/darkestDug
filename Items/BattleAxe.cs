@@ -5,7 +5,7 @@ public class BattleAxe : MonoBehaviour
 
     public string weapon = "BattleAxe";
     public float newAttackRange = 4f;
-    public int newAttackDamage = 4f;
+    public int newAttackDamage = 4;
     public float newAttackCooldown = 2f;
     public float moveSpeed = .5f;
     public int health = 4;

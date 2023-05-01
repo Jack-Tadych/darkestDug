@@ -6,7 +6,7 @@ public class Dagger : MonoBehaviour
 
     public string weapon = "dagger";
     public float newAttackRange = 1f;
-    public int newAttackDamage = 2f;
+    public int newAttackDamage = 2;
     public float newAttackCooldown = .5f;
     public float moveSpeed = 3f;
     public int health = 1;

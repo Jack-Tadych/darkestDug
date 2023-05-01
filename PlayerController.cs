@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public float healFactor = 1f;
     public int attackDamage = 50;
 
-    public int maxHeath = 100;
+    public int maxHealth = 100;
     public int currentHealth = 1;
     private bool isAttacking = false;
     private float lastAttackTime = 0f;
@@ -34,14 +34,14 @@ public class PlayerController : MonoBehaviour
     {
         basic_swing = GetComponent<AudioSource>();
         weapon = "fists";
-        currentHealth = maxHeath;
+        currentHealth = maxHealth;
     }
 
     public void Heal(int healAmount)
     {
-        if(healAmount+currentHealth > maxHeath)
+        if(healAmount+currentHealth > maxHealth)
         {
-            currentHealth = maxHeath;
+            currentHealth = maxHealth;
         }else{
         healAmount = (int)(healAmount * healFactor);
         currentHealth += healAmount;
