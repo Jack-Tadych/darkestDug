@@ -20,15 +20,11 @@ public class HealthObject : MonoBehaviour
                 hasGivenHealth = true;
 
                 // Wait for 5 seconds before destroying the object
-                Invoke("DestroyAfterDelay", Delay);   
+                Invoke("Destroy(gameObject);", Delay);   
             
             }
         }
 
-        private void DestroyAfterDelay()
-        {
-            yield return new WaitForSeconds(5f);
-            Destroy(gameObject);
-        }
+       
     }
 }
