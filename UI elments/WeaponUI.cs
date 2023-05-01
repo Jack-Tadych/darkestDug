@@ -18,7 +18,7 @@ public class WeaponUI : MonoBehaviour
     private void Update()
     {
      
-        heath.text = playerController.currentHealth.ToString() + "/" + playerController.maxHeath.ToString();
+        heath.text = playerController.currentHealth.ToString() + "/" + playerController.maxHealth.ToString();
 
         // Update the weapon image based on the current weapon
         switch (playerController.weapon)
