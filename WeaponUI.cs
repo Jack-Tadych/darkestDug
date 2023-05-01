@@ -20,10 +20,10 @@ public class WeaponUI : MonoBehaviour
             case "sword":
                 weaponImage.sprite = swordSprite;
                 break;
-            case "bow":
+            case "dagger":
                 weaponImage.sprite = Dagger;
                 break;
-            case "wand":
+            case "BattleAxe":
                 weaponImage.sprite = BattleAxe;
                 break;
             default:
