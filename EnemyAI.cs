@@ -18,12 +18,26 @@ public class EnemyAI : MonoBehaviour
     private float lastAttackTime = 0f;
     public float Delay = 2f;
 
+    //run away after attacking
+    private bool isRunningAway = false;
+    private float runAwayTime = 1f;
+    private float runAwaySpeedMultiplier = 1.5f;
+
 
     void AttackV2()
     {
         anim.SetTrigger("Attack");
-        Invoke("hittingThePlayer", Delay);   
+        Invoke("hittingThePlayer", Delay);
+        isRunningAway = true;
+        Invoke("StopRunning", runAwayTime);
+
     }
+     private void StopRunning()
+    {
+        isRunningAway = false;
+    }
+
+    private vo
     private void hittingThePlayer()
     {
         // Attack
@@ -111,18 +125,38 @@ public class EnemyAI : MonoBehaviour
         }
     }
     public void Update() {
+    // If attacking player
+    if (isAttacking) 
+    {
+        agent.destination = player.transform.position;
+        anim.SetTrigger("Move");
 
-        // if(isAttacking != null && isTouchingPlayer){
-        //     anim.SetTrigger("Idle");
-        // }
+        // If running away after attacking
+        if (isRunningAway)
+        {
+            // Calculate the direction away from player
+            Vector3 directionAwayFromPlayer = transform.position - player.transform.position;
+            directionAwayFromPlayer.Normalize();
 
+            // Set the agent's destination to a point away from the player
+            agent.SetDestination(transform.position + directionAwayFromPlayer * 10f);
 
-        if (isAttacking != null) 
-            {
-                agent.destination = player.transform.position;
-                anim.SetTrigger("Move");
-            }
+            // Increase agent's speed temporarily
+            agent.speed = agent.speed * runAwaySpeedMultiplier;
+        }
+    }
 
-        //velocity = transform.position;
+    // If not attacking or running away, set agent's destination to player's position
+    if (!isAttacking && !isRunningAway)
+    {
+        agent.destination = player.transform.position;
+        anim.SetTrigger("Move");
+    }
+
+    // Reset agent's speed to default after running away
+    if (!isRunningAway)
+    {
+        agent.speed = agent.speed / runAwaySpeedMultiplier;
     }
 }
+
