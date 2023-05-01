@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.AI;
 using System.Collections;
 
 public class HealthObject : MonoBehaviour
 {
+
+
     public int healAmount = 100;
     private void OnTriggerEnter(Collider other)
     {
         private bool hasGivenHealth = false;
         public float Delay = 2f;
         private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Player") && !hasGivenHealth)
+        
+        if (other.CompareTag("Player") && !hasGivenHealth)
             {
                 // Get the PlayerController component from the player
                 PlayerController playerController = other.GetComponent<PlayerController>();
@@ -19,11 +22,15 @@ public class HealthObject : MonoBehaviour
                 playerController.Heal(healAmount);
                 hasGivenHealth = true;
 
-        
+                // Wait for 5 seconds before destroying the object
+                Invoke("DestroyAfterDelay", Delay);   
             
             }
-        }
+        
 
-       
+        private void DestroyAfterDelay()
+        {
+            Destroy(gameObject);
+        }
     }
 }
