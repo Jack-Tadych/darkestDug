@@ -22,4 +22,4 @@ public class HealthObject : MonoBehaviour
     {
         Destroy(gameObject);
     }
-}
+}s
