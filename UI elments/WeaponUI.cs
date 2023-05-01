@@ -8,6 +8,7 @@ public class WeaponUI : MonoBehaviour
     public Sprite swordSprite;
     public Sprite Dagger;
     public Sprite BattleAxe;
+    
 
     // public AudioSource swing;
     // public AudioSource stab;
@@ -34,6 +35,7 @@ public class WeaponUI : MonoBehaviour
                 break;
             default:
                 weaponImage.sprite = null;
+                weaponImage.gameObject.SetActive(false);
                 break;
         }
     }
