@@ -1,36 +1,25 @@
 using UnityEngine;
-using UnityEngine.AI;
-using System.Collections;
 
 public class HealthObject : MonoBehaviour
 {
+    public int healthAmount = 100;
+    public float delayTime = 5.0f;
 
-
-    public int healAmount = 100;
     private void OnTriggerEnter(Collider other)
     {
-        private bool hasGivenHealth = false;
-        public float Delay = 2f;
-        private void OnTriggerEnter(Collider other)
-        
-        if (other.CompareTag("Player") && !hasGivenHealth)
-            {
-                // Get the PlayerController component from the player
-                PlayerController playerController = other.GetComponent<PlayerController>();
-
-                // Heal the player and set hasGivenHealth to true
-                playerController.Heal(healAmount);
-                hasGivenHealth = true;
-
-                // Wait for 5 seconds before destroying the object
-                Invoke("DestroyAfterDelay", Delay);   
-            
-            }
-        
-
-        private void DestroyAfterDelay()
+        if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            PlayerController player = other.GetComponent<PlayerController>();
+            player.Heal(healthAmount);
+            print("Healed! Health is now " + player.health);
+
+            // Delay the destruction of the health object
+            Invoke("DestroyObject", delayTime);
         }
+    }
+
+    void DestroyObject()
+    {
+        Destroy(gameObject);
     }
 }
