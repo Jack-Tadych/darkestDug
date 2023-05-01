@@ -18,7 +18,7 @@ public class WeaponUI : MonoBehaviour
 
     private void Update()
     {
-        print(playerController.maxHeath + " " + playerController.currentHeath);
+        print(playerController.maxHeath + " " + playerController.currentHealth);
         
         // Update the weapon image based on the current weapon
         switch (playerController.weapon)
