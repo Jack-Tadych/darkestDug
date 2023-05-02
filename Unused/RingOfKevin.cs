@@ -16,7 +16,6 @@ public class RingOfKevin : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
 
             // Change the values of the variables in the PlayerController script
-            player.ringOfKevin = true;
             
             // Destroy the battle axe object
             Destroy(transform.parent.gameObject);

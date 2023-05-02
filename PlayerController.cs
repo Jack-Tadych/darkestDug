@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public string weapon = "fists";
     public string died;
+    public Slider healthBar;
 
 
     //string[] myArray = new string[5];
@@ -55,7 +56,9 @@ public class PlayerController : MonoBehaviour
         print("Healed! currentHealth is now " + currentHealth);
     }
 
-
+    private void healBar(){
+        
+    }
 
     public void TakeDamage(int damage)
     {
@@ -92,7 +95,9 @@ public class PlayerController : MonoBehaviour
         AttackV2();
         click();
         drop();
+
     }
+
 
     void click() {
         if (Input.GetMouseButtonDown(0))
