@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
     void click() {
         if (Input.GetMouseButtonDown(0))
         {
-            print("Pressed left click."");
+            print("Pressed left click.");
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
