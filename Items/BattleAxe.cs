@@ -33,6 +33,6 @@ public class BattleAxe : MonoBehaviour
             // Destroy the battle axe object
             Destroy(transform.parent.gameObject);
 
-        }
+        
     }
 }
