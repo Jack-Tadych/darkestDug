@@ -18,7 +18,7 @@ public class Dagger : MonoBehaviour
             // Get the PlayerController component from the player
             GameObject playerObject = GameObject.FindWithTag("Player");
             PlayerController player = playerObject.GetComponent<PlayerController>();
-s
+
 
             // Change the values of the variables in the PlayerController script
             player.attackRange *= newAttackRange;
