@@ -19,7 +19,7 @@ public class RingOfAnger : MonoBehaviour
             player.attackDamage *= (int)modification;
             
             // Destroy the battle axe object
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

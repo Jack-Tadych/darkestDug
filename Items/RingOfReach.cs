@@ -19,7 +19,7 @@ public class RingOfReach : MonoBehaviour
             player.attackRange *= modification;
             
             // Destroy the battle axe object
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

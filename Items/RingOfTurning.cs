@@ -19,7 +19,7 @@ public class RingOfTurning : MonoBehaviour
             player.turnSpeed *= modification;
             
             // Destroy the battle axe object
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

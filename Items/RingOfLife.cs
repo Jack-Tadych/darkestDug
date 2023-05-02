@@ -20,7 +20,7 @@ public class RingOfLife : MonoBehaviour
 
             
             // Destroy the battle axe object
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

@@ -19,7 +19,7 @@ public class RingOfKevin : MonoBehaviour
             player.ringOfKevin = true;
             
             // Destroy the battle axe object
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

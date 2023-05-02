@@ -18,7 +18,7 @@ public class RingOfSwift : MonoBehaviour
             player.moveSpeed *= modification;
             player.attackCooldown /= modification;
             // Destroy the battle axe object
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }
