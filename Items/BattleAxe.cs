@@ -18,8 +18,7 @@ public class BattleAxe : MonoBehaviour
             GameObject playerObject = GameObject.FindWithTag("Player");
             PlayerController player = playerObject.GetComponent<PlayerController>();
 
-            // Get the PlayerController component from the player
-            PlayerController player = other.GetComponent<PlayerController>();
+   
 
             // Change the values of the variables in the PlayerController script
             player.attackRange *= newAttackRange;
