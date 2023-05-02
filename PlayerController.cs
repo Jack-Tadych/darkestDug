@@ -103,7 +103,13 @@ public class PlayerController : MonoBehaviour
     void click() {
         if (Input.GetMouseButtonDown(0))
         {
-            print(weapon);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Debug.Log("Clicked on object with tag: " + hit.collider.gameObject.tag);
+            }
         }
         
         
