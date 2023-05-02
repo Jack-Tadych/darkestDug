@@ -10,7 +10,7 @@ public class Sword : MonoBehaviour
     public float moveSpeed =  1.75f;
     public int health =  2;
 
-    private void OnTriggerEnter(Collider other)
+    public void pickUp()
     {
         if (other.CompareTag("Player"))
         {
