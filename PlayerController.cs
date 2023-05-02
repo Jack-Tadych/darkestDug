@@ -108,10 +108,19 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if(hit.collider.gameObject.tag == "Weapon"){
-                    if(hit.collider.gameObject.GetComponent<Sword>() != null){
+                if(hit.collider.gameObject.tag == "Weapon")
+                {
+                    if(hit.collider.gameObject.GetComponent<Sword>() != null)
+                    {
                         hit.collider.gameObject.GetComponent<Sword>().pickUp();
+                    }else if(hit.collider.gameObject.GetComponent<BattleAxe>() != null)
+                    {
+                        hit.collider.gameObject.GetComponent<BattleAxe>().pickUp();
+                    }else if(hit.collider.gameObject.GetComponent<Dagger>() != null)
+                    {
+                        hit.collider.gameObject.GetComponent<Dagger>().pickUp();
                     }
+                    
 
                 }
             }
