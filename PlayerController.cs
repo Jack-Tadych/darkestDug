@@ -103,31 +103,17 @@ public class PlayerController : MonoBehaviour
     void click() {
         if (Input.GetMouseButtonDown(0))
         {
-            print("Pressed left click.");
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
                 if(hit.collider.gameObject.tag == "Weapon"){
-                    Sword sword = GetComponent<Sword>();
-                    BattleAxe battleAxe = GetComponent<BattleAxe>();
-                    Dagger dagger = GetComponent<Dagger>();
+                    
+                    hit.collider.gameObject.GetComponent<Sword>().pickUp();
 
-                    if (sword != null)
-                    {
-                        sword.pickUp();
-                    }
-                    else if (battleAxe != null)
-                    {
-                        battleAxe.pickUp();
-                    }
-                    else if (dagger != null)
-                    {
-                        dagger.pickUp();
-                    }
                 }
-            }
+\            }
         }
         
         
