@@ -10,7 +10,7 @@ public class BattleAxe : MonoBehaviour
     public float moveSpeed = .5f;
     public int health = 4;
 
-     public void pickUp()
+    public void pickUp()
     {
         
             
@@ -18,7 +18,6 @@ public class BattleAxe : MonoBehaviour
             GameObject playerObject = GameObject.FindWithTag("Player");
             PlayerController player = playerObject.GetComponent<PlayerController>();
 
-   
 
             // Change the values of the variables in the PlayerController script
             player.attackRange *= newAttackRange;
