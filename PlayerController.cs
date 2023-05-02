@@ -57,8 +57,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void healBar(){
-        slider.maxValue = maxHealth;
-        slider.value = health;
+        healthBar.maxValue = maxHealth;
+        healthBar.value = currentHealth;
     }
 
     public void TakeDamage(int damage)
