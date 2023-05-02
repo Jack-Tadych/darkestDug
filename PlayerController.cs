@@ -110,20 +110,20 @@ public class PlayerController : MonoBehaviour
             {
                 if(hit.collider.gameObject.tag == "Weapon"){
                     Sword sword = GetComponent<Sword>();
-                    BattleAxe component2 = GetComponent<BattleAxe>();
-                    Dagger component3 = GetComponent<Dagger>();
+                    BattleAxe battleAxe = GetComponent<BattleAxe>();
+                    Dagger dagger = GetComponent<Dagger>();
 
                     if (sword != null)
                     {
                         sword.pickUp();
                     }
-                    else if (component2 != null)
+                    else if (battleAxe != null)
                     {
-                        component2.pickUp();
+                        battleAxe.pickUp();
                     }
-                    else if (component3 != null)
+                    else if (dagger != null)
                     {
-                        component3.pickUp();
+                        dagger.pickUp();
                     }
                 }
             }
