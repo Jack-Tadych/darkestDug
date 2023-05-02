@@ -27,8 +27,6 @@ public class BattleAxe : MonoBehaviour
             player.weapon = weapon;
             player.maxHealth *= health;
 
-            //change the wepon stats above to multipy the players base stats
-
             // Destroy the battle axe object
             Destroy(transform.parent.gameObject);
 
