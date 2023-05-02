@@ -10,11 +10,14 @@ public class BattleAxe : MonoBehaviour
     public float moveSpeed = .5f;
     public int health = 4;
 
-    private void OnTriggerEnter(Collider other)
+     public void pickUp()
     {
-        if (other.CompareTag("Player"))
-        {
+        
             
+            // Get the PlayerController component from the player
+            GameObject playerObject = GameObject.FindWithTag("Player");
+            PlayerController player = playerObject.GetComponent<PlayerController>();
+
             // Get the PlayerController component from the player
             PlayerController player = other.GetComponent<PlayerController>();
 

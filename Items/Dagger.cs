@@ -11,11 +11,14 @@ public class Dagger : MonoBehaviour
     public float moveSpeed = 3f;
     public int health = 1;
 
-    private void OnTriggerEnter(Collider other)
+    public void pickUp()
     {
-        if (other.CompareTag("Player"))
-        {
+        
             
+            // Get the PlayerController component from the player
+            GameObject playerObject = GameObject.FindWithTag("Player");
+            PlayerController player = playerObject.GetComponent<PlayerController>();
+s
             // Get the PlayerController component from the player   
             PlayerController player = other.GetComponent<PlayerController>();
 
