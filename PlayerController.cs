@@ -108,7 +108,10 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log("Clicked on object with tag: " + hit.collider.gameObject.tag);
+                if(hit.collider.gameObject.tag == "Weapon"){
+                    Debug.Log("Clicked on object with tag: " + hit.collider.gameObject.tag);
+                    hit.collider.gameObject.GetComponent<Sword>().pickUp();
+                }
             }
         }
         
