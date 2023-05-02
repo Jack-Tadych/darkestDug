@@ -57,7 +57,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void healBar(){
-        
+        slider.maxValue = maxHealth;
+        slider.value = health;
     }
 
     public void TakeDamage(int damage)
@@ -95,7 +96,7 @@ public class PlayerController : MonoBehaviour
         AttackV2();
         click();
         drop();
-
+        healBar();
     }
 
 
