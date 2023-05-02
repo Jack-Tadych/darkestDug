@@ -15,7 +15,9 @@ public class Sword : MonoBehaviour
         
             
             // Get the PlayerController component from the player
-            PlayerController player = GetComponent<PlayerController>();
+            GameObject playerObject = GameObject.FindWithTag("Player");
+            PlayerController player = playerObject.GetComponent<PlayerController>();
+
 
             // Change the values of the variables in the PlayerController script
             player.attackRange *= newAttackRange;
