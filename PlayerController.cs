@@ -110,8 +110,8 @@ public class PlayerController : MonoBehaviour
             {
                 if(hit.collider.gameObject.tag == "Weapon"){
                     Sword sword = GetComponent<Sword>();
-                    ScriptComponentType2 component2 = GetComponent<ScriptComponentType2>();
-                    ScriptComponentType3 component3 = GetComponent<ScriptComponentType3>();
+                    BattleAxe component2 = GetComponent<BattleAxe>();
+                    Dagger component3 = GetComponent<Dagger>();
 
                     if (sword != null)
                     {
