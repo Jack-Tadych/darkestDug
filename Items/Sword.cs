@@ -12,8 +12,7 @@ public class Sword : MonoBehaviour
 
     public void pickUp()
     {
-        if (other.CompareTag("Player"))
-        {
+        
             
             // Get the PlayerController component from the player
             PlayerController player = other.GetComponent<PlayerController>();
@@ -29,6 +28,6 @@ public class Sword : MonoBehaviour
             // Destroy the battle axe object
             Destroy(transform.parent.gameObject);
 
-        }
+        
     }
 }
