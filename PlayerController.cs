@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
                     hit.collider.gameObject.GetComponent<Sword>().pickUp();
 
                 }
-\            }
+            }
         }
         
         
